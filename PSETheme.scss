@@ -1,0 +1,289 @@
+
+$v-animations-enabled: false;
+
+$v-changed-field-background: #ff84ff;
+
+@import "../iis/iis.scss";
+
+@font-face {
+    font-family: 'Vaadin-Icons';
+    src: url('fonts/Vaadin-Icons.eot');
+    src: url('fonts/Vaadin-Icons.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Vaadin-Icons.woff') format('woff'),
+         url('fonts/Vaadin-Icons.ttf') format('truetype'),
+         url('fonts/Vaadin-Icons.svg#icomoon') format('svg');
+}
+.Vaadin-Icons {
+    font-family: 'Vaadin-Icons';
+}
+
+/* This contains all of your theme.*/
+/* If somebody wants to extend the theme she will include this mixin. */
+@mixin PSETheme {
+
+	@include iis;
+  
+.v-label-grid_number {
+             text-align:center;
+             height: 3pc;
+             color: green;
+             font-weight: 900;
+             font-size: 300%;
+             line-height: 1;
+             letter-spacing: 5px;
+             font-family: Courier, monospace;
+   }
+
+.v-label-error {
+      	color: #580000;
+      	padding-left: 18pt !important;
+		background-image: url(icons/16/error.png);
+		background-repeat: no-repeat;
+		background-position: 3px 50%;
+   }
+
+.v-label-warning {
+      	color: black;
+		padding-left: 18pt !important;
+		background-image: url(icons/16/warning.png);
+		background-repeat: no-repeat;
+		background-position: 3px 50%;
+   }
+
+input {
+	color: black !important;
+}
+
+.v-textfield-grid_number {
+             text-align:center;
+             height: $v-unit-size--huge;
+             color: green !important;
+             font-weight: 900;
+             font-size: 300%;
+             line-height: 1;
+             letter-spacing: 5px;
+             font-family: Courier, monospace;
+             border: medium none;
+			 border-radius: 0px;
+			 background: transparent none repeat scroll 0% 0%;
+			 box-shadow: none;
+			 color: inherit;
+   }
+
+
+input[class*="prompt"] {
+    color: #969FB0 !important;
+}
+
+.v-disabled {
+    color: #969FB0 !important;
+}
+
+.v-label-info {
+      	color: black;
+		padding-left: 18pt !important;
+		background-image: url(icons/16/information.png);
+		background-repeat: no-repeat;
+		background-position: 3px 50%;
+   }
+
+.v-label-border {
+		border-width: thin;
+		border-style: solid;
+		border-color: darkgray;
+   }
+
+.v-label-search {
+      	padding-left: 17px !important;
+		background-image: url(icons/magnifier.png);
+		background-repeat: no-repeat;
+		background-position: 3px center;
+   }
+   
+.v-label-important {
+      	color: red;
+        font-weight: bold;
+        font-size: large;
+		letter-spacing:3px;
+		text-align:center;   
+}
+
+.v-table-cell-content-error-bg {
+		background: #EF6C25;
+	}
+
+.v-table-row-error {
+		background: #EF6C25;
+	}
+
+.v-table-cell-content-magenta{
+	color: magenta;
+}
+
+.v-table-cell-content-red{
+	color: red;
+}
+
+.v-table-cell-content-blue{
+	color: blue;
+}
+
+.v-table-row-magenta{
+	color: magenta;
+}
+
+.v-table-row-red{
+	color: red;
+}
+
+.v-table-row-blue{
+	color: blue;
+}
+
+.v-table-row-blue{
+	color: blue;
+}
+
+.popup-view-field {
+		padding: 3px;
+	}
+	
+.no-underline{
+		text-decoration: none !important;
+	}
+
+.no-border{
+		border: none !important;
+	}
+
+.v-formlayout-captioncell { 
+		text-align: left;
+	}
+	
+.block-text {
+		font-style: italic;
+		line-height: 1.5;
+		color: blue;
+		padding-left: 20px;
+	}
+
+.invalid-records {
+		color: #EF6C25;
+	}
+	
+.all-records {
+		color: #82ca15;
+	}
+
+.icon-overlap {
+		font-weight:bold;
+		color:#3b5998;
+		margin-left:-7px;
+		margin-right: 5px;
+		position:relative;
+		top:20%;
+		background:#eee;
+	}
+	
+.v-loading-indicator[style*="none"]:before {
+        display: none;
+   }
+   
+.v-loading-indicator-delay:before, .v-loading-indicator-wait:before {
+         content: "";
+         position: fixed;
+         background-color: rgba(0,0,0,.5);
+         background-image: url(../valo/shared/img/spinner.gif) ;
+       	 background-position: center;
+       	 background-attachment: fixed;
+       	 background-repeat: no-repeat;
+       	 size: 72px 72px;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         pointer-events: auto;
+    }	
+    
+.v-loading-indicator-wait {
+	    width: 96%;
+	    .v-ff & {
+	        width: 90%;
+	    }
+	    @include animation(v-progress-wait 5s forwards, v-progress-wait 4s infinite backwards);
+	}
+	
+.spinner-label {
+		@include valo-spinner(72px);
+	}
+	
+.spinner-window {
+		opacity: 0.95;
+		z-index: 1000;
+	}	
+
+.v-caption-tiny {
+		font-size: 11px;
+	}
+
+.v-caption-small {
+		font-size: 12px;
+	}
+
+.v-caption {
+		font-weight: bold;
+	}
+	
+.timeOnly .v-datefield-calendarpanel-header, .timeOnly .v-datefield-calendarpanel-body{
+  		display: none;
+  	}
+
+
+.v-table-cell-content-inactive {
+		color: #7a7a7a;
+	}  
+  
+.v-table-row-inactive {
+		color: #7a7a7a;
+	}  
+  
+.v-table-cell-content-line-through {
+		text-decoration: line-through;
+	}  
+  
+.changed-field:not(.v-datefield-popup),
+.changed-field [class*="input"],
+.changed-field [class*="textfield"] {
+  background: $v-changed-field-background;
+}  	
+	
+.v-stepper-changed-field [class*="input"] {
+        background: $v-changed-field-background;
+    }	
+	
+@-webkit-keyframes blinking {
+  from { background-color: red; }
+  to { background-color: inherit; }
+}
+@-moz-keyframes blinking {
+  from { background-color: red; }
+  to { background-color: inherit; }
+}
+@-o-keyframes blinking {
+  from { background-color: red; }
+  to { background-color: inherit; }
+}
+@keyframes blinking {
+  from { background-color: red; }
+  to { background-color: inherit; }
+}
+
+.v-table-row-blinking {
+  -webkit-animation: blinking 1s infinite; /* Safari 4+ */
+  -moz-animation:    blinking 1s infinite; /* Fx 5+ */
+  -o-animation:      blinking 1s infinite; /* Opera 12+ */
+  animation:         blinking 1s infinite; /* IE 10+ */
+}
+	
+}
+
